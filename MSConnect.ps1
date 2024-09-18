@@ -63,6 +63,7 @@ function Connect-Services {
     }
 }
 
+# Here you the commands you want to run.
 function Invoke-Commands {
     Get-Mailbox
 }
@@ -74,15 +75,11 @@ function Disconnect-Services {
     Write-Host "Completed."
 }
 
-# Main script execution
+# Everything has been declred and setup. Now we execute everythign we setup.
 Test-Modules
 Connect-Services -email $email -password $password
-
-# Test Exchange connection
 Invoke-Commands
-
-
-# Disconnect services
 Disconnect-Services
 
+# final pause incase there was output we wanted to see.
 Pause
