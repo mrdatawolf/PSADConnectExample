@@ -63,6 +63,10 @@ function Connect-Services {
     }
 }
 
+function Invoke-Commands {
+    Get-Mailbox
+}
+
 # Function to disconnect from AzureAD and ExchangeOnline
 function Disconnect-Services {
     Disconnect-AzureAD
@@ -75,7 +79,8 @@ Test-Modules
 Connect-Services -email $email -password $password
 
 # Test Exchange connection
-Get-Mailbox
+Invoke-Commands
+
 
 # Disconnect services
 Disconnect-Services
